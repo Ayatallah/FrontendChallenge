@@ -13,7 +13,12 @@ function userSrv($http) {
 	};
 
 	userSrv.getUser = function(){
-
+    	
+    	return $http.get('https://api.github.com/users/:login').then(function(result){
+    		if(result.status == 200){
+    			return result.data;
+    		}
+    	});
     	
 	};
 	return userSrv;
