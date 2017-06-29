@@ -15,5 +15,5 @@ gulp.task('styles', function(){
   	.pipe(sass()).on('error', function(e) {
       console.log(e);
     })
-    .pipe(gulp.dest('./style'));
+    .pipe(gulp.dest('./temp'));
 });
