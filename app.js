@@ -5,7 +5,7 @@
 		$stateProvider
     	.state('home', {
         url: "/home",
-        templateUrl: 'app/partials/home.html'
+        templateUrl: 'partials/home.html'
     });
     
     // The following couple of lines are used to remove # for more pretty URLs

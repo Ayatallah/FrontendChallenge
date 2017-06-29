@@ -1,4 +1,5 @@
-$bodyBg: red;
+@import "./bower_components/foundation-apps/scss/foundation.scss";
+$bodyBg: #eee;
 body{
 	background-color: $bodyBg;
 }
