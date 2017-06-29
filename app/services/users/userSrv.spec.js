@@ -1,9 +1,14 @@
 describe('userSrv', function(){
 
-  beforeEach(module('TaskApp'));
-  
-  it('Should test userSrv', inject(function(userSrv) {
-  	expect(userSrv.getUsers()).toEqual(['Aya','Ahmed']);
-  }));
+	var Users;
+ 	beforeEach(angular.mock.module('TaskApp'));
+	beforeEach(inject(function(_userSrv_) {
+		Users = _userSrv_;
+	}));
+
+    // Test to verify the userSrv exists
+	it('should exist', function() {
+		expect(Users).toBeDefined();
+	});
 
 });
