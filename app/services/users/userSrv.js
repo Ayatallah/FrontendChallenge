@@ -11,6 +11,11 @@ function userSrv($http) {
     	});
     	
 	};
+
+	userSrv.getUser = function(){
+
+    	
+	};
 	return userSrv;
 
 };
