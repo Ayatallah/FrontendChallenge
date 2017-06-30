@@ -3,6 +3,6 @@ function homeDir(){
 	return{
 		restrict: 'EA',
 		scope: {},
-		templateUrl: 'homeDir.html'
+		templateUrl: '/app/directives/HomeDir/homeDir.html'
 	};
 }

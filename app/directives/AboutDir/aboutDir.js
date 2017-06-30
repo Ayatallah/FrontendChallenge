@@ -3,6 +3,6 @@ function aboutDir(){
 	return{
 		restrict: 'EA',
 		scope: {},
-		templateUrl: 'aboutDir.html'
+		templateUrl: '/app/directives/AboutDir/aboutDir.html'
 	};
 }

@@ -1,3 +1,5 @@
 <div ng-controller="HomeCtrl as Home">
 	<h1>{{Home.say}}</h1>
+	<home-dir ng-show="!Home.about"></home-dir>
+	<about-dir ng-show="Home.about"></about-dir>
 </div>
