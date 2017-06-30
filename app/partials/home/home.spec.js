@@ -1,9 +1,13 @@
 describe('HomeCtrl', function(){
-	var ctrl;
+	var ctrl,scope;
 	beforeEach(angular.mock.module('TaskApp'));
-	beforeEach(inject(function($controller) {
-		ctrl = $controller('HomeCtrl');
+	beforeEach(inject(function($rootScope,$controller) {
+		scope = $rootScope.$new();
+		ctrl = $controller('HomeCtrl',{
+                '$scope': scope
+        });
 	}));
-	// it('', function(){ 
- //    });
+	it('Home should say HELLLOW!', function(){
+            expect(ctrl.say).toBe('HELLLOW!');
+    });
 })
