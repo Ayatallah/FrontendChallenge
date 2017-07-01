@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "angular": "~1.4.14",
-    "angular-ui-router": "~0.2",
+    "angular-ui-router": "~0.2.7",
     "foundation-apps": "~1.2.0",
     "angular-mocks": "~1.4.14",
     "angular-ui-router-title": "~0.1.1"

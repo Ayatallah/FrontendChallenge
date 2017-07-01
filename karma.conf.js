@@ -19,6 +19,8 @@ module.exports = function(config) {
       'FrontendChallenge/bower_components/angular/angular.js',
       'FrontendChallenge/bower_components/angular-mocks/angular-mocks.js',
       'FrontendChallenge/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'FrontendChallenge/bower_components/angular-ui-router-title/angular-ui-router-title.js',
+      'FrontendChallenge/app/**/*/*.html',
       'FrontendChallenge/app.js',
       'FrontendChallenge/app/**/*/*.js',
       'FrontendChallenge/app/**/*/*.spec.js'

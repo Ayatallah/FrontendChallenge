@@ -2,7 +2,10 @@ angular.module('TaskApp').directive('usersDir', usersDir);
 function usersDir(){
 	return{
 		restrict: 'EA',
-		scope: {},
-		templateUrl: 'usersDir.html'
+		scope: {
+			userslist: "=",
+			getuser: "&"
+		},
+		templateUrl: '/app/directives/UsersDir/usersDir.html'
 	};
 }

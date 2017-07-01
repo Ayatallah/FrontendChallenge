@@ -1,2 +1,7 @@
-<div ng-controller="UsersCtrl as Users">
+<div>
+<user-dir user="Users.user"></user-dir>
+<ul>
+	<a ng-click="Users.loadmore()">Load more..</a>
+	<users-dir userslist="Users.users" getuser="Users.getuser()"></users-dir>
+</ul>
 </div>

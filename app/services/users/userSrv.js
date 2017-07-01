@@ -12,9 +12,9 @@ function userSrv($http) {
     	
 	};
 
-	userSrv.getUser = function(){
+	userSrv.getUser = function(login){
     	
-    	return $http.get('https://api.github.com/users/:login').then(function(result){
+    	return $http.get('https://api.github.com/users/'+login).then(function(result){
     		if(result.status == 200){
     			return result.data;
     		}

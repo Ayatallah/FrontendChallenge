@@ -20,16 +20,24 @@
     	})
         .state('users', {
 	        url: "/users",
-	        templateUrl: 'app/partials/user/users.html',
+            controller: 'UsersCtrl',
+            controllerAs: 'Users',
+            templateUrl: 'app/partials/user/users.html',
             resolve: {
-                $title: function() { return 'Users'; }
+                $title: function() { return 'Users'; },
+                usersNeeded: function(userSrv){
+
+                    return userSrv.getUsers();
+                }
             }
+
     	})
     	.state('user', {
-	        url: "/users/:login",
-	        templateUrl: 'app/partials/user/users.html',
+	        url: "/:login",
+            parent: 'users',
             resolve: {
-                $title: function() { return 'Users'; }
+                $title: function() { return 'User'; },
+                
             }
     	});
     	$urlRouterProvider.when('/home', '/');
