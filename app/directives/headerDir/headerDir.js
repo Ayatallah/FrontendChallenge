@@ -3,6 +3,6 @@ function headerDir(){
 	return{
 		restrict: 'EA',
 		scope: {},
-		templateUrl: 'headerDir.html'
+		templateUrl: '/app/directives/headerDir/headerDir.html'
 	};
 }
