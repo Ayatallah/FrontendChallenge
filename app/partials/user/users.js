@@ -9,7 +9,7 @@ function UsersCtrl($rootScope,$scope,$state, userSrv,usersNeeded){
 	});
 	$rootScope.$on('$stateChangeSuccess', 
 	function(){ 
-		console.log($state.params.login);
+		//console.log($state.params.login);
 		userSrv.getUser($state.params.login).then(function (user) {
 			vm.user=user;
 		});
