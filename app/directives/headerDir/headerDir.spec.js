@@ -1,3 +1,0 @@
-describe('headerDir', function(){
-
-});

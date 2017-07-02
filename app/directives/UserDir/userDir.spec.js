@@ -1,3 +1,0 @@
-describe('userDir', function(){
-
-});
