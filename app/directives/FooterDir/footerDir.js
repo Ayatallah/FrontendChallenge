@@ -3,6 +3,6 @@ function footerDir(){
 	return{
 		restrict: 'EA',
 		scope: {},
-		templateUrl: 'footerDir.html'
+		templateUrl: '/app/directives/FooterDir/footerDir.html'
 	};
 }

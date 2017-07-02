@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 
+// These two was the most crucial for me while development
+
 //Connect Taks
 gulp.task('connect', function () {
   connect.server({
@@ -17,9 +19,3 @@ gulp.task('styles', function(){
     })
     .pipe(gulp.dest('./temp'));
 });
-
-//Still need test task to automate testing
-//Inject task, to include all needed files in index automatically
-//Watch task, to watch for any changes
-//Clean task, to clean any compiled files
-//Build task

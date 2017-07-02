@@ -3,7 +3,8 @@ function usersDir(){
 	return{
 		restrict: 'EA',
 		scope: {
-			userslist: "="
+			userslist: "=",
+			loadmore: "&"
 		},
 		templateUrl: '/app/directives/UsersDir/usersDir.html'
 	};

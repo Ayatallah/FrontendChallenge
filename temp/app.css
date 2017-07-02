@@ -5464,8 +5464,332 @@ blockquote p {
 .float-none {
   float: none; }
 
+/*
+  PANEL
+  -----
+
+  The friendly panel is an all-purpose container for hiding content off-screen.
+
+  Features:
+   - Position at top, right, bottom, or left
+   - Anchor to grid block or window
+   - Define max width or height
+   - Transform into grid block depending on screen size
+*/
+.panel {
+  position: absolute;
+  z-index: 100;
+  overflow-y: auto;
+  display: none; }
+  .is-active.panel {
+    display: block; }
+
+/*
+  THE GRID
+  --------
+
+  Foundation's magical, flexbox-powered grid.
+
+  Features:
+   - Horizontal or vertical grids
+   - Auto-sizing or percentage width grid blocks
+   - Independently-scrollable blocks
+   - Column alignment
+   - Source ordering
+   - Offsets
+*/
+/*
+  Define the size of a grid block. Blocks are flex items. By default, they stretch to fill all available space, based on the size of sibling blocks. This is the "expand" behavior.
+
+  If set to "shrink", the block will contract and only fill as much space as it needs for its content.
+
+  If set to a number, the block will be given a percentage width, based on the total number of columns (12 by default). Percentage widths don't work if a block is inside a vertical grid.
+
+  @group grid
+
+  @param {number|string} $size - Sizing behavior of the block. Should be expand, shrink, or a number.
+
+  @output The flex-basis, flex-grow, and flex-shrink properties.
+*/
+/*
+  Set the orientation of blocks within this block. The grid is re-oriented by changing the flex direction of the block.
+
+  @group grid
+
+  @param {string} $orientation - Direction of the grid, either horizontal or vertical.
+
+  @output A flex-flow property to match the direction given.
+*/
+/*
+  Stretch a grid's child blocks across its cross-axis, making every column appear to have the same height.
+
+  @group grid
+
+  @param {bool} $stretch - Stretch blocks if true, or align blocks to top if false.
+
+  @output Sets align-items to "stretch" if $stretch is true, or "flex-start" (the default value) if false.
+*/
+/*
+  Set the alignment of blocks within a grid.
+
+  left: Items align to the left.
+  right: Items align to the right.
+  center: Items align to the center.
+  justify: Items are spaced equally apart so they occupy the space of the entire grid.
+  spaced: Items are given equal space to their left and right.
+
+  @group grid
+
+  @param {string} $align - Alignment to use.
+
+  @output An appropriate justify-content value.
+*/
+/*
+  Set the source order of a block. Items with lower numbers appear first. If multiple items have the same number, the one in the HTML first will appear first.
+
+  @group grid
+
+  @param {number} $order - Position in source order.
+
+  @output An order property.
+*/
+/*
+  Collapse a content block by removing the padding.
+
+  @group grid
+
+  @param {bool} $collapse - Collapses the block if true.
+
+  @output A padding value.
+
+  @todo No way to reverse collapse using this mixin. Solution:
+    - If true, add padding: 0;
+    - If false, add padding: 1rem;
+    - If null, add nothing, to cut down on CSS output
+    - Make null the default value
+*/
+/*
+  Constrain the size of a block to the size of the average grid row, and center-align it. This imitates the behavior of ordinary Foundation rows.
+
+  @group grid
+
+  @param {bool} $container - Adds container styles if true.
+
+  @output A maximum width and the good old margin: 0 auto for center alignment.
+*/
+/*
+  Add negative margins to a block, equal to the padding of a content block. This aligns the edges of a block nested inside a content block.
+
+  @group grid
+
+  @param {bool} $nest - Adds negative margins if true.
+
+  @output Negative margin values.
+*/
+/*
+  Offset a block by adding a left margin.
+
+  @group grid
+
+  @param {number | bool} $offset - If false, nothing is output. If a number, offsets the column by the specified number of columns.
+
+  @output A left margin based on the number of columns specified, and the global number of columns.
+*/
+/*
+  Resets styles set by panels. Use this when a panel transforms into a block on larger screens.
+
+  @group grid
+
+  @output Resets to transform, position, and a few visual styles.
+*/
+/*
+  Frames are containers that stretch to the full dimmensions of the browser window.
+*/
+/*
+  Groups are collections of content items. They're the "rows" of Foundation for Apps.
+*/
+/*
+  Blocks are containers for actual content. They're the "columns" of Foundation for Apps.
+*/
+.vertical.grid-frame, .vertical.grid-block, .vertical.small-grid-block, .vertical.medium-grid-block, .vertical.large-grid-block {
+  flex-flow: column nowrap;
+  align-items: stretch; }
+
+.small-vertical.grid-frame, .small-vertical.grid-block, .small-vertical.small-grid-block, .small-vertical.medium-grid-block, .small-vertical.large-grid-block {
+  flex-flow: column nowrap;
+  align-items: stretch; }
+
+.small-horizontal.grid-frame, .small-horizontal.grid-block, .small-horizontal.small-grid-block, .small-horizontal.medium-grid-block, .small-horizontal.large-grid-block {
+  flex-flow: row wrap; }
+
+@media only screen and (min-width: 40em) {
+  .medium-vertical.grid-frame, .medium-vertical.grid-block, .medium-vertical.small-grid-block, .medium-vertical.medium-grid-block, .medium-vertical.large-grid-block {
+    flex-flow: column nowrap;
+    align-items: stretch; }
+  .medium-horizontal.grid-frame, .medium-horizontal.grid-block, .medium-horizontal.small-grid-block, .medium-horizontal.medium-grid-block, .medium-horizontal.large-grid-block {
+    flex-flow: row wrap; } }
+
+@media only screen and (min-width: 75em) {
+  .large-vertical.grid-frame, .large-vertical.grid-block, .large-vertical.small-grid-block, .large-vertical.medium-grid-block, .large-vertical.large-grid-block {
+    flex-flow: column nowrap;
+    align-items: stretch; }
+  .large-horizontal.grid-frame, .large-horizontal.grid-block, .large-horizontal.small-grid-block, .large-horizontal.medium-grid-block, .large-horizontal.large-grid-block {
+    flex-flow: row wrap; } }
+
+.align-right.grid-frame, .align-right.grid-block, .align-right.small-grid-block, .align-right.medium-grid-block, .align-right.large-grid-block {
+  justify-content: flex-end; }
+
+.align-center.grid-frame, .align-center.grid-block, .align-center.small-grid-block, .align-center.medium-grid-block, .align-center.large-grid-block {
+  justify-content: center; }
+
+.align-justify.grid-frame, .align-justify.grid-block, .align-justify.small-grid-block, .align-justify.medium-grid-block, .align-justify.large-grid-block {
+  justify-content: space-between; }
+
+.align-spaced.grid-frame, .align-spaced.grid-block, .align-spaced.small-grid-block, .align-spaced.medium-grid-block, .align-spaced.large-grid-block {
+  justify-content: space-around; }
+
+.wrap.grid-frame, .wrap.grid-block, .wrap.small-grid-block, .wrap.medium-grid-block, .wrap.large-grid-block {
+  flex-wrap: wrap;
+  align-items: flex-start; }
+
+.shrink.grid-block, .shrink.grid-content, .shrink.small-grid-block, .shrink.small-grid-content, .shrink.medium-grid-block, .shrink.medium-grid-content, .shrink.large-grid-block, .shrink.large-grid-content {
+  flex: 0 0 auto;
+  overflow: visible; }
+
+.noscroll.grid-block, .noscroll.grid-content, .noscroll.small-grid-block, .noscroll.small-grid-content, .noscroll.medium-grid-block, .noscroll.medium-grid-content, .noscroll.large-grid-block, .noscroll.large-grid-content {
+  overflow: visible; }
+
 body {
-  background-color: #eee; }
+  background-color: #fff;
+  font-family: PT Sans, sans-serif; }
+
+ul li a {
+  color: #010101;
+  list-style-type: none; }
+  ul li a:hover {
+    color: black; }
+
+h2 {
+  font-family: PT Sans, sans-serif;
+  color: #010101;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px; }
+
+h6 {
+  font-family: PT Sans, sans-serif;
+  color: #010101;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-left: 23px; }
+
+h5 {
+  font-family: PT Sans, sans-serif;
+  color: #fafafa;
+  font-size: 20px;
+  font-weight: 400; }
+
+.nav-bar {
+  box-shadow: 0 5px 15px 0 #ebebeb;
+  height: 90px; }
 
 .active {
-  color: green !important; }
+  color: black !important;
+  background-color: #fafafa;
+  border-top: #00cd66 solid 5px;
+  padding: 35px 20px 29px 20px; }
+
+.logo {
+  padding-bottom: 7px; }
+
+nav .pull-left {
+  margin-left: 10%;
+  padding-top: 17px;
+  display: inline-block; }
+  nav .pull-left span {
+    margin-left: 10px;
+    color: #010101;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left; }
+
+nav .pull-right {
+  margin-left: 40%;
+  display: inline-block; }
+  nav .pull-right ul li {
+    display: inline-block;
+    margin-right: 60px;
+    list-style-type: none; }
+
+users-dir {
+  width: 90%; }
+
+.users-dir {
+  margin: 20px 0 20px 30px;
+  display: block; }
+  .users-dir ul {
+    height: 550px;
+    overflow-y: scroll;
+    margin-bottom: 20px; }
+    .users-dir ul li {
+      list-style-type: none;
+      padding: 5px; }
+      .users-dir ul li:hover {
+        background-color: #f3f3f3; }
+      .users-dir ul li a:visited {
+        color: black;
+        background-color: #f3f3f3; }
+  .users-dir h6 {
+    margin-left: 38%; }
+  .users-dir .btn-green {
+    margin-left: 23px; }
+
+.body-container {
+  background-image: url(/images/StockSnap_H2SNXCYG1T.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px; }
+
+.home-dir {
+  margin-top: 45px;
+  float: right;
+  width: 400px;
+  margin-right: 12%; }
+
+.btn {
+  border-radius: 0;
+  font-family: PT Sans, sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-width: 0;
+  text-decoration: none; }
+
+.btn-white {
+  background: #fafafa;
+  color: #010101; }
+  .btn-white:hover {
+    background: #fff;
+    text-decoration: none; }
+
+.btn-green {
+  background: #00cd66;
+  color: #fff; }
+  .btn-green:hover {
+    background: #00b85b;
+    text-decoration: none; }
+
+.footer-dir {
+  background-color: #fff;
+  height: 40px; }
+  .footer-dir p {
+    font-size: 14px;
+    margin-top: 18px;
+    text-align: center; }
+
+.user-photo {
+  margin: 0 0 35px 20%;
+  width: 50%;
+  height: auto; }

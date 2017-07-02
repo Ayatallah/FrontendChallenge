@@ -1,7 +1,10 @@
-	<h1>PEOW PEOW PEOW!!</h1>
-	<ol>
-	<li ng-repeat="user in userslist">
-		<a ng-href="/#/users/{{user.login}}">
-		{{user.login}}</a>
-	</li>
-	</ol>
+<div class="users-dir">
+	<h6>Users List:</h6>
+	<ul>
+		<li ng-repeat="user in userslist" ui-sref-active="active">
+			<a ui-sref="user({login:user.login})" >
+			{{user.login}}</a>
+		</li>
+	</ul>
+	<button  class="btn btn-green" ng-click="loadmore()">Load more..</button>
+</div>

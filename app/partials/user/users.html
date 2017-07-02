@@ -1,7 +1,8 @@
-<div>
-<user-dir user="Users.user"></user-dir>
-<ul>
-	<a ng-click="Users.loadmore()">Load more..</a>
-	<users-dir userslist="Users.users"></users-dir>
-</ul>
+<div class="grid-block">
+	<div class="small-4 grid-block">
+		<users-dir  userslist="Users.users" loadmore="Users.loadmore()"></users-dir>
+	</div>
+	<div class="small-8 grid-block">
+		<user-dir user="Users.user"></user-dir>
+	</div>
 </div>

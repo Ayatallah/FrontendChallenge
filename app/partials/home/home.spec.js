@@ -7,7 +7,7 @@ describe('HomeCtrl', function(){
                 '$scope': scope
         });
 	}));
-	it('Home should say HELLLOW!', function(){
-            expect(ctrl.say).toBe('HELLLOW!');
-    });
+	// it('Home should say HELLLOW!', function(){
+ //            expect(ctrl.say).toBe('HELLLOW!');
+ //    });
 })
