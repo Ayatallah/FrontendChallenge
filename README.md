@@ -1,6 +1,6 @@
 # FrontendChallenge
 To run the app:
-1- clone https://github.com/Ayatallah/FrontendChallenge.git
+1- clone https://github.com/Ayatallah/FrontendChallenge.git or just cd to the folder FrontendChallenge
 2- run command: npm install
 3- run command: bower install
 4- run command: gulp styles to compile sass
