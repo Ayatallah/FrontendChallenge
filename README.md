@@ -1,5 +1,6 @@
 # FrontendChallenge
 To run the app:
+
 1- clone https://github.com/Ayatallah/FrontendChallenge.git
 
 2- run command: npm install
