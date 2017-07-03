@@ -15,12 +15,12 @@ describe('userSrv', function(){
 	}));
 
     // Test to verify the userSrv exists
-	it('should exist', function() {
+	it('userSrv should exist', function() {
 		expect(Users).toBeDefined();
 	});
 
 	// Test to verify the getUsers works
-	it('should test getUsers', function() {
+	it('should test userSrv getUsers', function() {
 		$httpBackend.expectGET('https://api.github.com/users').respond(mockUsers);
         Users.getUsers().then(function(data) {
             expect(data).toEqual(mockUsers);
@@ -29,7 +29,7 @@ describe('userSrv', function(){
 	});
 
 	// Test to verify the getUser works
-	it('should test getUser', function() {
+	it('should test userSrv getUser', function() {
 		$httpBackend.expectGET('https://api.github.com/users/'+login).respond(mockUser);
         Users.getUser(login).then(function(data) {
             expect(data).toEqual(mockUser);
