@@ -167,3 +167,37 @@ users-dir {
 	width: 50%;
 	height: auto;
 }
+@media only screen and(max-width: 1240px) {
+	nav .pull-right {
+		margin-left: 5%;
+	}
+}
+@media only screen and(max-width: 735px) {
+	nav {
+		.pull-right {
+			margin-left: 5%;
+			ul {
+				margin-top: 10px;
+				li {
+					display: block;
+					margin-right: 5px;
+					margin-top: 5px;
+				}
+			}
+		}
+		.pull-left {
+			margin-left: 0;
+		}
+	}
+	.active {
+		padding: 0;
+	}
+	.nav-bar {
+		height: 110px;
+	}
+	.logo {
+		width: 50px;
+		height: auto;
+		padding-bottom: 10px;
+	}
+}
